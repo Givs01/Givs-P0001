@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PAS: Undertaking</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<div class="nav">
+
+    <div class="nav-h">
+
+        <div class="header">
+
+            <div class="logo">
+
+                <a
+                    class="navbar-brand"
+                    href="https://pas.org.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <img
+                        src="https://pas.org.in/image/company_logo?img_id=17511&t=1712643133933"
+                        alt="PAS Logo"
+                    >
+
+                </a>
+
+            </div>
+
+
+            <!-- Inactivity warning -->
+
+            <div id="custom-alert">
+
+                <div class="alert-box">
+
+                    <p>
+                        You will be logged out in 60 seconds
+                        due to inactivity.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="login-btn"
+                        onclick="stayLoggedIn()"
+                    >
+                        Stay Logged In
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Logout -->
+
+            <div
+                class="login-form"
+                id="logoutSection"
+            >
+
+            <p>
+                Welcome ULB!! -
+                <strong id="headerUlbName"></strong>
+            </p>
+
+
+                <button
+                    type="button"
+                    class="login-btn"
+                    id="logoutButton"
+                >
+                    Return
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================================================
+     LOGIN REQUIRED MESSAGE
+========================================================= -->
+
+<section
+    id="loginRequired"
+    class="login-required"
+    style="display: none;"
+>
+    <div class="login-required-box">
+
+        <h2>Please Login to the PAS Portal</h2>
+
+        <p>
+            ULB data was not found.
+            Please login on the PAS portal, select your target,
+            and choose <strong>Proceed to Declaration</strong> tab.
+        </p>
+
+        <a
+            href="https://pas.org.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button-s"
+        >
+            Login to PAS Portal
+        </a>
+
+    </div>
+</section>
+
+<!-- =========================================================
+     DECLARATION PAGE
+========================================================= -->
+
+<section
+    class="form"
+    id="dp-2"
+    style="display: none;"
+>
+
+
+    <!-- Project heading -->
+
+    <div class="background-1">
+        <h1>PERFORMANCE ASSESSMENT SYSTEM (PAS) PROJECT</h1>
+        <h2>| Undertaking Portal |</h2>
+
+
+        <div class="light-text">
+            <span id="ulbDisplay2"> </span>,
+                <span id="stateDisplay2"></span>
+            <br> 
+            Financial Year: 
+            <span id="financialYearDisplay"></span>
+        </div>
+    </div>
+
+
+
+    <form id="ut">
+
+
+        <!-- =================================================
+             TITLE
+        ================================================== -->
+        <div class="box-d">
+
+            <p>
+
+            <strong>
+                Undertaking by Chief Officer/Commissioner of the ULB
+            </strong>
+
+
+            </p>
+
+            <button
+                class="button-s optional-b"
+                type="button"
+                onclick="window.open('https://docs.google.com/document/d/1Nag24-CylmTVdAMKqhXcVnhP9-mSSD0_/export?format=doc');"
+            >
+                Download Undertaking
+            </button>
+        
+        </div>
+
+
+
+
+
+        <!-- =================================================
+             FILE UPLOAD
+        ================================================== -->
+
+        <div class="box-c">
+
+
+            <p
+                id="error30"
+                class="f-error"
+            ></p>
+
+            <div class="box-e">
+
+
+                <p >
+
+                    Please attached the signed copy of declaration by the Chief Officer/Commissioner on ULB letterhead in PDF format (5MB max).
+
+                    <span class="required">*</span>
+
+                </p>
+
+
+                <input
+                    id="fileInput30"
+                    name="file30"
+                    type="file"
+                    accept="application/pdf,.pdf"
+                    required
+                >
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             DECLARATION
+        ================================================== -->
+
+        <div class="declaration-box">
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    id="declarationAccepted"
+                >
+
+
+                <span>
+
+                    I hereby declare that the information and
+                    documents submitted through this form have
+                    been verified Chief Officer/Commissioner of the ULB and
+                    are correct to the best of my knowledge.
+
+                </span>
+
+            </label>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SUCCESS MESSAGE
+        ================================================== -->
+
+        <div
+            id="successMessage"
+            class="success-message"
+        >
+        </div>
+
+
+
+        <!-- =================================================
+             BUTTON
+        ================================================== -->
+
+        <div
+            class="box-f"
+            style="margin-top: 20px;"
+        >
+
+            <button
+                class="button-s"
+                id="submitButton"
+                type="submit"
+            >
+                Submit
+            </button>
+
+        </div>
+
+
+    </form>
+
+
+    <!-- =========================================================
+        SUBMISSION SUCCESS / DOCUMENT VIEW
+    ========================================================= -->
+
+    <div
+        id="submittedDocumentBox"
+        class="submitted-document-box"
+        style="display: none;"
+    >
+
+        <div class="submitted-success">
+
+            <div class="success-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <h2 id="submittedDocumentTitle">
+                Declaration Submitted Successfully
+            </h2>
+
+            <p id="submittedDocumentMessage">
+                Your undertaking has been successfully submitted.
+            </p>
+
+        </div>
+
+
+        <!-- =====================================================
+            SUBMISSION DETAILS
+        ====================================================== -->
+
+        <div class="submitted-details">
+
+            <div class="detail-row">
+
+                <strong>
+                    Submission ID:
+                </strong>
+
+                <span id="submittedSubmissionId">
+                    -
+                </span>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <strong>
+                    ULB:
+                </strong>
+
+                <span id="submittedUlbName">
+                    -
+                </span>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <strong>
+                    State:
+                </strong>
+
+                <span id="submittedStateName">
+                    -
+                </span>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <strong>
+                    Financial Year:
+                </strong>
+
+                <span id="submittedYear">
+                    -
+                </span>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <strong>
+                    File:
+                </strong>
+
+                <span id="submittedFileName">
+                    -
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+            VIEW / DOWNLOAD
+        ====================================================== -->
+
+        <div class="submitted-document-actions">
+
+            <a
+                id="submittedDocumentDownload"
+                class="button-s"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <i class="fa-solid fa-file-pdf"></i>
+
+                Download PDF
+
+            </a>
+
+        </div>
+
+
+        <!-- =====================================================
+            PDF PREVIEW
+        ====================================================== -->
+
+        <div class="pdf-preview">
+
+            <iframe
+                id="submittedDocumentPreview"
+                title="Submitted Undertaking PDF"
+                loading="lazy"
+            ></iframe>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

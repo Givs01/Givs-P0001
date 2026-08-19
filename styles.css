@@ -1,0 +1,648 @@
+/* ============================================================
+   GLOBAL
+============================================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    color: #10345A;
+}
+
+
+/* ============================================================
+   HEADER / NAVIGATION
+============================================================ */
+
+.nav {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2);
+    background: #ffffff;
+}
+
+.nav-h {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* ============================================================
+   LOGO
+============================================================ */
+
+.logo img {
+    width: 125px;
+    height: auto;
+    display: block;
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   LOGOUT SECTION
+============================================================ */
+
+.login-form {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.login-form p {
+    margin: 0;
+    font-size: 14px;
+}
+
+#headerUlbName {
+    padding-right: 10px !important;
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   COMMON BUTTON
+============================================================ */
+
+.login-btn {
+    border: none;
+    background-color: #35424e;
+    color: #ffffff;
+    padding: 9px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.login-btn:hover {
+    background-color: #0b2947;
+}
+
+
+/* ============================================================
+   UNDERTAKING FORM
+============================================================ */
+
+.form {
+    width: 80%;
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 20px 30px 40px;
+    color: #10345A;
+    border: 1px solid #c9cacc;
+}
+
+
+/* ============================================================
+   PROJECT HEADING
+============================================================ */
+
+.background-1 {
+    margin: 25px 0;
+    padding: 15px 0;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.7;
+    border-radius: 5px;
+}
+
+
+.background-1 h1 {
+    margin: 0;
+    font-size: 28px;
+    text-align: center;
+}
+
+.background-1 h2 {
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+    background-color: #faf8f8;
+    color: #365F91;
+    padding: 5px;
+}
+
+.light-text {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #365F91;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    background-color: #F2F2F2;
+}
+
+/* ============================================================
+   FORM TITLE
+============================================================ */
+
+.form > form > p {
+    margin-left: 30px;
+    line-height: 1.5;
+}
+
+.required {
+    color: red;
+}
+
+
+/* ============================================================
+   FILE UPLOAD BOX
+============================================================ */
+
+
+.box-c {
+    margin: 20px 0;
+}
+.box-d {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+.box-d p {
+    margin-left: 0 !important;
+}
+
+.box-e {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 18px 20px;
+    background: #f7f9fb;
+    border: 1px solid #d5dce3;
+    border-radius: 6px;
+}
+
+.box-e p {
+    margin: 0;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.box-e input[type="file"] {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #ffffff;
+    color: #333;
+}
+
+
+/* ============================================================
+   FILE ERROR
+============================================================ */
+
+.f-error {
+    display: none;
+    color: #b00020;
+    background: #ffe8e8;
+    border: 1px solid #f5b5b5;
+    padding: 10px 12px;
+    border-radius: 5px;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+}
+
+
+/* ============================================================
+   DECLARATION
+============================================================ */
+
+.declaration-box {
+    margin: 25px 0px;
+    padding: 18px;
+    background: #f7f9f7;
+    border: 1px solid #d5ddd5;
+    border-radius: 6px;
+}
+
+.declaration-box label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.declaration-box input[type="checkbox"] {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   SUCCESS MESSAGE
+============================================================ */
+
+.success-message {
+    display: none;
+    margin: 15px 0px 0;
+    padding: 12px;
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    line-height: 1.5;
+}
+
+
+/* ============================================================
+   SUBMIT BUTTON CONTAINER
+============================================================ */
+
+.box-f {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px 0;
+}
+
+
+/* ============================================================
+   SUBMIT BUTTON
+============================================================ */
+
+.button-s {
+    border: none;
+    background-color: #10345A;
+    color: #ffffff;
+    padding: 10px 28px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.button-s:hover {
+    background-color: #0b2947;
+}
+
+.button-s:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.optional-b {
+    font-size: 12px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    display: block;
+    background-color: #2d6199;
+}
+
+
+/* ============================================================
+   INACTIVITY WARNING
+============================================================ */
+
+#custom-alert {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    justify-content: center;
+    align-items: center;
+}
+
+#custom-alert .alert-box {
+    width: 90%;
+    max-width: 400px;
+
+    padding: 25px;
+
+    background: #222222;
+    color: #ffffff;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#custom-alert .alert-box p {
+    margin: 0 0 20px;
+    line-height: 1.5;
+}
+
+
+
+.login-required {
+    min-height: 70vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+
+.login-required-box {
+    width: 100%;
+    max-width: 650px;
+
+    background: #ffffff;
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+.login-required-box h2 {
+    margin-bottom: 15px;
+
+    color: #333333;
+}
+
+
+.login-required-box p {
+    margin-bottom: 25px;
+
+    color: #666666;
+
+    line-height: 1.6;
+}
+
+
+.login-required-box .button-s {
+    display: inline-block;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   SUBMITTED DOCUMENT PAGE
+============================================================ */
+
+.submitted-document-box {
+    width: 100%;
+    padding: 25px;
+}
+
+
+/* ============================================================
+   SUCCESS HEADER
+============================================================ */
+
+.submitted-success {
+    text-align: center;
+    padding: 25px 15px;
+    background: #f1faf3;
+    border: 1px solid #c8e6cc;
+    border-radius: 6px;
+}
+
+.success-icon {
+    font-size: 48px;
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+.submitted-success h2 {
+    margin: 5px 0 8px;
+    color: #155724;
+    font-size: 24px;
+}
+
+.submitted-success p {
+    margin: 0;
+    color: #4a5a4d;
+}
+
+
+/* ============================================================
+   SUBMISSION DETAILS
+============================================================ */
+
+.submitted-details {
+    margin-top: 20px;
+    padding: 18px 20px;
+    background: #f7f9fb;
+    border: 1px solid #d5dce3;
+    border-radius: 6px;
+}
+
+.detail-row {
+    display: flex;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-row strong {
+    min-width: 140px;
+    color: #10345A;
+}
+
+.detail-row span {
+    color: #444;
+    word-break: break-word;
+}
+
+
+/* ============================================================
+   DOCUMENT BUTTON
+============================================================ */
+
+.submitted-document-actions {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.submitted-document-actions .button-s {
+    text-decoration: none;
+}
+
+
+/* ============================================================
+   PDF PREVIEW
+============================================================ */
+
+.pdf-preview {
+    width: 100%;
+    height: 700px;
+    border: 1px solid #c9cacc;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.pdf-preview iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 768px) {
+
+    .nav-h,
+    .form {
+        width: 95%;
+    }
+
+    .header {
+        padding: 10px;
+    }
+
+    .logo img {
+        width: 105px;
+    }
+
+    .login-form {
+        gap: 8px;
+    }
+
+    .login-form p {
+        font-size: 12px;
+    }
+
+    .login-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .background-1 {
+        font-size: 14px;
+        margin: 20px 0;
+    }
+
+    .form > form > p {
+        margin-left: 10px;
+    }
+
+    .box-c {
+        margin: 15px 10px;
+    }
+
+    .box-e {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .box-e p,
+    .box-e input[type="file"] {
+        width: 100%;
+    }
+
+    .declaration-box {
+        margin: 20px 10px;
+    }
+
+    .success-message {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .box-f {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    .submitted-document-box {
+        padding: 15px 0;
+    }
+
+    .submitted-success h2 {
+        font-size: 20px;
+    }
+
+    .detail-row {
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .detail-row strong {
+        min-width: auto;
+    }
+
+    .submitted-document-actions .button-s {
+        width: 100%;
+        text-align: center;
+    }
+
+    .pdf-preview {
+        height: 500px;
+    }
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+============================================================ */
+
+@media (max-width: 480px) {
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .login-form {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .background-1 {
+        padding: 12px 8px;
+        font-size: 13px;
+    }
+
+    .declaration-box {
+        padding: 14px;
+        font-size: 14px;
+    }
+
+    .button-s {
+        width: 100%;
+    }
+
+    .box-f {
+        display: block;
+    }
+}
