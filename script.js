@@ -753,6 +753,26 @@ function showSubmittedDeclaration(
    CHECK EXISTING DECLARATION
 ============================================================ */
 
+/* ============================================================
+   CHECKING LOADER
+============================================================ */
+
+function hideCheckingLoader() {
+
+    const loader =
+        document.getElementById(
+            "checkingLoader"
+        );
+
+    if (loader) {
+
+        loader.style.display =
+            "none";
+
+    }
+
+}
+
 async function checkExistingDeclaration() {
 
     /*
@@ -763,6 +783,7 @@ async function checkExistingDeclaration() {
     if (!ulbDataFound) {
 
         showLoginRequired();
+        ideCheckingLoader();
 
         return;
 
@@ -849,14 +870,6 @@ async function checkExistingDeclaration() {
         /*
          * ======================================================
          * EXISTING DECLARATION
-         *
-         * Backend response:
-         *
-         * {
-         *   status: "Submitted",
-         *   submitted: true,
-         *   ...
-         * }
          * ======================================================
          */
 
@@ -883,13 +896,6 @@ async function checkExistingDeclaration() {
         /*
          * ======================================================
          * NO PREVIOUS DECLARATION
-         *
-         * Expected response:
-         *
-         * {
-         *   status: "success",
-         *   submitted: false
-         * }
          * ======================================================
          */
 
@@ -932,16 +938,6 @@ async function checkExistingDeclaration() {
         );
 
 
-        /*
-         * IMPORTANT:
-         *
-         * Do not silently pretend that
-         * the check succeeded.
-         *
-         * However, keep the form available
-         * so a temporary server problem does
-         * not completely lock the user out.
-         */
 
         showDeclarationForm();
 
@@ -956,6 +952,10 @@ async function checkExistingDeclaration() {
 
         }
 
+    }
+    finally {
+
+        hideCheckingLoader();
     }
 
 }
@@ -973,6 +973,7 @@ if (!ulbDataFound) {
 
 
     showLoginRequired();
+    showCheckingLoader();
 
 }
 else {
