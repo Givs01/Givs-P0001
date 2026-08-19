@@ -455,21 +455,6 @@
 
         </div>
 
-
-        <!-- =====================================================
-            PDF PREVIEW
-        ====================================================== -->
-
-        <div class="pdf-preview">
-
-            <iframe
-                id="submittedDocumentPreview"
-                title="Submitted Undertaking PDF"
-                loading="lazy"
-            ></iframe>
-
-        </div>
-
     </div>
 
 </section>
@@ -481,11 +466,17 @@
 <footer class="sticky-footer">
     <div class="footer-content">
 
-        <span>
-            Powered by <strong>givs01</strong>
+        <span class="footer-item">
+            Powered by <strong class="brand">givs01</strong>
         </span>
 
-        <span class="footer-divider">|</span>
+        <span class="footer-separator">•</span>
+
+        <span class="footer-item">
+            © <span id="currentYear"></span>
+        </span>
+
+        <span class="footer-separator">•</span>
 
         <a
             href="https://cwas.org.in/"
@@ -494,10 +485,16 @@
             class="cwas-link"
         >
             <strong>Center for Water and Sanitation</strong>
+            <span class="external-icon">↗</span>
         </a>
+
+        <span class="footer-item">
+            All rights reserved.
+        </span>
 
     </div>
 </footer>
+
 <script src="script.js"></script>
 
 </body>

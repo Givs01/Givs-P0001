@@ -1,6 +1,8 @@
 /* ============================================================
    CONFIGURATION
 ============================================================ */
+document.getElementById("currentYear").textContent = new Date().getFullYear();
+
 
 const API_URL =
     "https://script.google.com/macros/s/AKfycbzQyhLYE6VfpkfNh25SwghSXmXT892-Ulg5xZsEX3ph5TZqTobA65czubiKZdjHvIn_bw/exec";
@@ -556,27 +558,6 @@ function showSubmittedDeclaration(
 
 
     /*
-     * ==========================================================
-     * PDF PREVIEW
-     * ==========================================================
-     */
-
-    if (
-        submittedDocumentPreview &&
-        result.fileId
-    ) {
-
-        submittedDocumentPreview.src =
-            "https://drive.google.com/file/d/" +
-            encodeURIComponent(
-                result.fileId
-            ) +
-            "/preview";
-
-    }
-
-
-    /*
     * ==========================================================
     * PDF DOWNLOAD BUTTON
     * ==========================================================
@@ -783,7 +764,7 @@ async function checkExistingDeclaration() {
     if (!ulbDataFound) {
 
         showLoginRequired();
-        ideCheckingLoader();
+        hideCheckingLoader();
 
         return;
 
@@ -966,16 +947,12 @@ async function checkExistingDeclaration() {
 ============================================================ */
 
 if (!ulbDataFound) {
-
-    console.warn(
-        "ULB data not found."
-    );
-
+    console.warn("ULB data not found.");
 
     showLoginRequired();
-    showCheckingLoader();
-
+    hideCheckingLoader();
 }
+
 else {
 
     /*
@@ -1788,6 +1765,15 @@ function stayLoggedIn() {
 
     }
 
+);
+
+
+window.history.replaceState(
+  {},
+  document.title,
+  `${window.location.pathname}?ulbName=${encodeURIComponent(
+    new URLSearchParams(window.location.search).get("ulbName")
+  )}`
 );
 
 
