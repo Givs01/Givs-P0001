@@ -20,11 +20,33 @@ const MAX_FILE_SIZE =
    URL PARAMETERS
 ============================================================ */
 
-const params =
-    new URLSearchParams(
-        window.location.search
+// Preserve the complete URL across reloads.
+let originalUrl =
+    sessionStorage.getItem("originalUrl");
+
+if (!originalUrl) {
+
+    originalUrl =
+        window.location.href;
+
+    sessionStorage.setItem(
+        "originalUrl",
+        originalUrl
     );
 
+}
+
+console.log(
+    "Original URL:",
+    originalUrl
+);
+
+
+// IMPORTANT:
+// Read ALL application parameters from the stored URL,
+// not from the shortened browser URL.
+const params =
+    new URL(originalUrl).searchParams;
 
 /* ============================================================
    ULB INFORMATION
@@ -71,17 +93,6 @@ const stateName =
 
 const year =
     params.get("year") || "";
-
-
-/*
- * Example:
- *
- * year=2027
- *
- * becomes:
- *
- * 2025-26
- */
 
 const financialYear =
     year &&
@@ -1768,14 +1779,15 @@ function stayLoggedIn() {
 );
 
 
-window.history.replaceState(
-  {},
-  document.title,
-  `${window.location.pathname}?ulbName=${encodeURIComponent(
-    new URLSearchParams(window.location.search).get("ulbName")
-  )}`
-);
+/* ============================================================
+   SHORTEN ADDRESS BAR
+============================================================ */
 
+window.history.replaceState(
+    {},
+    document.title,
+    `${window.location.pathname}?ulbName=${encodeURIComponent(ulbName)}`
+);
 
 /* ============================================================
    START INACTIVITY TIMER
