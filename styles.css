@@ -779,3 +779,58 @@ body {
         display: block;
     }
 }
+
+
+/* ============================================================
+   DOWNLOAD CARD
+============================================================ */
+
+.action-card {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 20px 24px;
+
+    margin: 20px 0;
+
+    background: rgb(247, 247, 247);
+
+    border: 1px solid rgb(214, 214, 214);
+
+    border-radius: 5px;
+
+}
+
+
+.action-content {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+
+
+.action-content h3 {
+    margin: 0 0 2px;
+
+    font-size: 15px;
+
+    color: var(--text);
+}
+
+
+.action-content p {
+    margin: 0;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+}
